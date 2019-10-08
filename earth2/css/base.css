@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('../img/globe.jpg');
+}
+
+.planet-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.planet-box .planet-globe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.planet-box .planet-globe-pole {
+    position: absolute;
+    top: -265px;
+    left: -265px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50% 50%;
+    background-color: #fff;
+}
+
+.planet-box .planet-globe-doms-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.planet-box .planet-globe-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -233px;
+    margin-left: -240px;
+    width: 490px;
+    height: 470px;
+    background-size: contain;
+}

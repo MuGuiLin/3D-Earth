@@ -1,0 +1,43 @@
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ html,body {
+    width: 100%;
+    height: 100%;
+    background: url(../img/body-bg.png);
+ }
+
+ @keyframes earth-move {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.earth-box {
+    position: fixed !important;
+    top: 25%;
+    left: 50%;
+    margin-left: -340px;
+    width: 680px;
+    height: 600px;
+    background: transparent;
+    z-index: 2;
+    transform: scale(0);
+    animation: earth-move 1s ease-in-out 1s forwards;
+}
+
+.earth-box::before {
+    content: "";
+    position: absolute;
+    top: 23%;
+    left: 26%;
+    width: 48%;
+    height: 54%;
+    border-radius: 50%;
+    box-shadow: 0 0 300px 80px rgba(116, 36, 216, 0.8);
+}
