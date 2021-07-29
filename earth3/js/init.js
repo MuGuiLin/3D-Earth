@@ -119,7 +119,7 @@ window.onload = function () {
                 globeRadius: 80,       // 地球的半径
                 globeOuterRadius: 150, //地球的外半径
                 environment: 'none',   //背景
-                heightTexture: './img/earth-ba.jpg',
+                heightTexture: './img/earth-bg.jpg',
                 baseTexture: './img/earth-bg.png',
                 shading: 'lambert',
                 displacementScale: 0,           //纹理深度 默认为 0

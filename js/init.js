@@ -116,19 +116,19 @@ window.onload = function () {
                 show: false                          //hover时显示信息
             },
             globe: {
-                globeRadius: 80, // 地球的半径
+                globeRadius: 80,       // 地球的半径
                 globeOuterRadius: 150, //地球的外半径
-                environment: 'none',            //背景
-                heightTexture: './img/earth-bar.jpg',
+                environment: 'none',   //背景
+                heightTexture: './img/earth-bg.jpg',
                 baseTexture: './img/earth-bg.png',
                 shading: 'lambert',
                 displacementScale: 0,           //纹理深度 默认为 0
                 light: {                        //光照阴影
                     main: {
-                        color: 'blue',           //光照颜色
-                        intensity: 12,            //光照强度
-                        shadowQuality: 'ultra',     //阴影亮度
-                        shadow: true,               //是否显示阴影
+                        color: 'blue',          //光照颜色
+                        intensity: 12,          //光照强度
+                        shadowQuality: 'ultra', //阴影亮度
+                        shadow: true,           //是否显示阴影
                         alpha: 40,
                         beta: -30
                     },
@@ -143,10 +143,10 @@ window.onload = function () {
                     autoRotate: true,           //自动旋转
                     autoRotateAfterStill: 10,
                     distance: 240,
-                    autoRotateSpeed: 4,     //旋转速度 单位为角度 / 秒，默认为10 ，也就是36秒转一圈。
-                    zoomSensitivity: 0,     //缩放操作的灵敏度，值越大越灵敏。默认为`` 0为不缩放
-                    rotateSensitivity: 0,   //旋转操作的灵敏度，值越大越灵敏。支持使用数组分别设置横向和纵向的旋转灵敏度。
-                    panSensitivity: 0       //平移操作的灵敏度，值越大越灵敏。支持使用数组分别设置横向和纵向的平移灵敏度 默认为`` 设置为0后无法平移
+                    autoRotateSpeed: 5,     //旋转速度 单位为角度 / 秒，默认为10 ，也就是36秒转一圈。
+                    zoomSensitivity: 1,     //缩放操作的灵敏度，值越大越灵敏。默认为`` 0为不缩放
+                    rotateSensitivity: 10,   //旋转操作的灵敏度，值越大越灵敏。支持使用数组分别设置横向和纵向的旋转灵敏度。
+                    panSensitivity: 10       //平移操作的灵敏度，值越大越灵敏。支持使用数组分别设置横向和纵向的平移灵敏度 默认为`` 设置为0后无法平移
                 },
                 postEffect: {               //为画面添加高光，景深，环境光遮蔽（SSAO），调色等效果
                     enable: true,           //是否开启
@@ -223,25 +223,11 @@ window.onload = function () {
                 hoverAnimation: false,
                 label: {
                     normal: {
-                        show: false,
+                        show: true,
                         position: 'right',
                         formatter: '{b}',
-                        formatter: function (params) {
-                            if (params.dataIndex == 1) {
-                                return '上海'
-                            } else if (params.dataIndex == 2) {
-                                return '沈阳'
-                            } else if (params.dataIndex == 3) {
-                                return '太原'
-                            } else if (params.dataIndex == 4) {
-                                return '日本'
-                            } else if (params.dataIndex == 5) {
-                                return '雅加达'
-                            } else if (params.dataIndex == 0) {
-                                return '徐州'
-                            } else if (params.dataIndex == 6) {
-                                return '昆明'
-                            }
+                        formatter: function (data) {
+                            return data.data.name;
                         },
                         textStyle: {
                             show: false,
@@ -258,27 +244,41 @@ window.onload = function () {
                     }
                 },
 
-                // 以地址显示
-                // data: [{
-                //     'name': 'A',
-                //     'value': [105.18, 37.51, 1500]
-                // }, {
-                //     'name': 'B',
-                //     'value': [118.393252, 31.15576, 1500]
-                // }, {
-                //     'name': 'C',
-                //     'value': [117.989662, 31.293115, 1500]
-                // }]
-
                 // 以地址+路线轨迹显示
                 data: [
-                    [117.11, 34.15],
-                    [118.58, 32.01],
-                    [123.38, 41.8],
-                    [112.01, 38.01],
-                    [139.46, 35.42],
-                    [116.58, 6.10],
-                    [102.90, 25.31]
+                    {
+                        name: '上海', value: [117.11, 34.15]
+                    },
+                    {
+                        name: '遵义-习水-桑木-大房子', value: [106.335917, 28.241228]
+                    },
+                    {
+                        name: '海口', value: [110.187707, 20.061778]
+                    },
+                    {
+                        name: '东京', value: [139.660177, 35.860783]
+                    },
+                    {
+                        name: '皇后镇', value: [168.654317, -44.872951]
+                    },
+                    {
+                        name: '路路阿堡', value: [22.4418, -5.85703]
+                    },
+                    {
+                        name: '巴格达', value: [44.553051, 33.692094]
+                    },
+                    {
+                        name: '圣地亚哥', value: [-70.692216, -33.438525]
+                    },
+                    {
+                        name: '拉斯维加斯', value: [-115.149284, 36.187715]
+                    },
+                    {
+                        name: '格林兰', value: [-42.406372, 71.973095]
+                    },
+                    {
+                        name: '夏威夷', value: [-155.589933, 19.901194]
+                    }
                 ]
             }]
         };
