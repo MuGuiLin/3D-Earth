@@ -31,12 +31,16 @@
 }
 
 .earth-box::before {
-    content: "";
+    content: "加载中。请稍候！";
     position: absolute;
     top: 23%;
     left: 26%;
     width: 48%;
     height: 54%;
+    line-height: 520px;
+    font-size: 28px;
     border-radius: 50%;
+    color: white;
+    text-align: center;
     box-shadow: 0 0 300px 80px rgba(116, 36, 216, 0.8);
 }
